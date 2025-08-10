@@ -46,3 +46,9 @@ Here’s a clear summary table for your **main.css**:
 | `.key-feature`                    | Single feature block          | `display: inline-block`, `width: 30%`, `vertical-align: top`                                                                                 | Lays out features in (about) three columns.                               |
 | `.key-feature__image`             | Feature icon circle           | `background: #ffcede`, `width: 128px`, `height: 128px`, `border: 2px solid #424242`, `border-radius: 50%`, `margin: auto`                    | Centered pink circular badge with border.                                 |
 | `.key-feature__description`       | Feature text                  | `text-align: center`, `font-weight: bold`, `color: white`, `font-size: 20px`                                                                 | Bold, white, centered caption.                                            |
+
+---
+
+Here’s a clear summary table for your **index.html**
+
+![alt text](image.png)

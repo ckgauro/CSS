@@ -1,32 +1,64 @@
-@startmindmap
+@startuml
+skinparam shadowing false
+skinparam BackgroundColor #FFFFFF
+skinparam defaultFontName Montserrat
+skinparam rectangle {
+  BorderColor #D9DEE3
+  RoundCorner 12
+}
+
+' Color constants from your CSS
 !define GREEN #2ddf5c
-!define GREEN_DARK #0e4f1f
-!define PINK #ff1b68
-!define HERO_BG #EAF7EF
-!define BLACK #000000
-!define WHITE #FFFFFF
+!define DARK  #0e4f1f
+!define PINK  #ff1b68
+!define CARD  #d5ffdc
+!define HILIT #19b84c
+!define FOOT  #000000
+!define HERO  #EAF7EF  ' fallback tint; actual hero uses freedom.jpg
 
-* <color:BLACK>html</color>
-** <color:BLACK>head</color>
-*** <color:BLACK>link: Google Fonts ("Anton", "Montserrat")</color>
-*** <color:BLACK>link: main.css</color>
-** <color:BLACK>body</color>
+package "index.html layout" {
+  rectangle "Header\n.main-header\n(shared.css)" as HEADER #GREEN
+  rectangle "Hero\n#product-overview\n(main.css, bg: freedom.jpg)" as HEROSEC #HERO
+  rectangle "Plans\n#plans\n(main.css)" as PLANS
+  rectangle "Plan\n.article.plan (FREE/PREMIUM)\n(main.css)" as PLAN #CARD
+  rectangle "Plan (Highlighted)\n.article.plan.plan--highlighted (PLUS)\n(main.css)" as PLANH #HILIT
+  rectangle "Key Features\n#key-features\n(main.css)" as KEY #PINK
+  rectangle "Footer\n.main-footer\n(shared.css)" as FOOTER #FOOT
+}
 
-*** <back:GREEN><color:WHITE>header.main-header</color></back>
-**** <color:BLACK>div</color>
-***** <color:GREEN_DARK>a.main-header__brand : "uHost"</color>
+' Reading flow top → bottom
+HEADER -down-> HEROSEC
+HEROSEC -down-> PLANS
+PLANS -down-> KEY
+KEY -down-> FOOTER
 
-**** <color:BLACK>nav.main-nav</color>
-***** <color:BLACK>ul.main-nav__items</color>
-****** <color:GREEN_DARK>li.main-nav__item -> a : "Packages"</color>
-****** <color:GREEN_DARK>li.main-nav__item -> a : "Customers"</color>
-****** <back:PINK><color:WHITE>li.main-nav__item.main-nav__item--cta -> a : "Start Hosting"</color></back>
+' Group plan variants under Plans
+PLANS -[hidden]-> PLAN
+PLANS -[hidden]-> PLANH
 
-*** <color:BLACK>main</color>
-**** <back:HERO_BG><color:BLACK>section#product-overview</color></back>
-***** <color:BLACK>h1 : "Get the freedom you deserve."</color>
+note right of HEADER
+  Nav & Brand styles come from shared.css:
+  - .main-header__brand (dark green text)
+  - .main-nav, .main-nav__item, .main-nav__item--cta
+  - .button (reused in plans)
+end note
 
-**** <color:BLACK>section#plans</color>
-***** <color:GREEN>h1.section-title : "Choose Your Plan"</color>
-***** <color:BLACK>p : "Make sure you get the most for your money!"</color>
-@endmindmap
+note right of HEROSEC
+  main.css:
+  - background image (freedom.jpg)
+  - fixed height & padding
+  - #product-overview h1 uses Anton, white
+end note
+
+legend right
+  Styling sources:
+  • shared.css → header, nav, footer, buttons
+  • main.css → hero, plans, key-features
+  Key colors:
+  • Header: #2ddf5c
+  • CTA & Features band: #ff1b68
+  • Plan card: #d5ffdc
+  • Highlighted plan: #19b84c
+  • Footer: #000000
+endlegend
+@enduml
