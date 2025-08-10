@@ -52,3 +52,28 @@ Here’s a clear summary table for your **main.css**:
 Here’s a clear summary table for your **index.html**
 
 ![alt text](image.png)
+
+---
+
+Here’s a crisp summary table for your **packages/packages.css**:
+| Selector | Target / Scope | Key Declarations | What it does |
+| --------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `main` | Page main area | `padding-top: 32px` | Adds top spacing before package list. |
+| `.package` | Each package card | `width: 80%`, `margin: 16px 0`, `border: 4px solid #0e4f1f`, `border-left: none` | Wide card with thick dark-green border (no left border by default). |
+| `.package:hover, .package:active` | Card hover/active | `box-shadow: 2px 2px 4px rgba(0,0,0,.5)`, `border-color: #ff5454` | Elevates card and turns border red on interaction. |
+| `.package a` | Full-card link | `text-decoration: none`, `color: inherit`, `display: block`, `padding: 32px` | Makes the whole card clickable, removes underline, inherits text color, adds inner padding. |
+| `.package__subtitle` | Subtitle text | `color: #979797` | Light gray subtitle. |
+| `.package__info` | Info strip/box | `padding: 16px`, `border: 1px solid #0e4f1f`, `font-size: 20px`, `color: #0e4f1f`, `background: white` | Emphasized info panel with green text and border. |
+| `.clearfix` | Utility element | `clear: both` | Forces following content to sit below floated cards. |
+| `#plus` | PLUS package variant | `background: rgba(213,255,220,.95)` | Light green background. |
+| `#free` | FREE package variant | `background: rgba(234,252,237,.95)`, `float: right`, `border-right: none`, `border-left: 4px solid #0e4f1f`, `text-align: right` | Floats card to the right and mirrors border to the left; right-aligned text. |
+| `#free:hover, #free:active` | FREE hover/active | `border-left-color: #ff5454` | Left border turns red on interaction. |
+| `#premium` | PREMIUM package variant | `background: rgba(14,79,31,.95)` | Dark green background. |
+| `#premium .package__title` | Premium title | `color: white` | Ensures title contrasts on dark bg. |
+| `#premium .package__subtitle` | Premium subtitle | `color: #bbb` | Softer gray subtitle on dark bg. |
+
+**Notes**
+
+- .package a { color: inherit; } lets variants control link color (e.g., white text on #premium).
+- #free flips borders because the card is floated right; use .clearfix after floated rows to avoid overlap.
+- Consider an accessible focus style for the full-card link (currently hover/active only).
