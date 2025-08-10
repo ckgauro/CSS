@@ -1,57 +1,21 @@
-### lecture 25. Module Introduction
+Here’s your CSS explained as a markup-style summary table so you can see at a glance what each selector does:
 
-- The Box model
-- Heigh & Width
-- The "display" Property
-- "Properties Worth to Remember"
-- Pseudo Classes & Elements
+| **Selector**                                                  | **Purpose / Target**                | **Key Properties**                                                                                           | **Effect**                                                                 |
+| ------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| `*`                                                           | All elements                        | `box-sizing: border-box;`                                                                                    | Includes padding and border inside the element’s width/height calculation. |
+| `body`                                                        | Whole page                          | `font-family: "Montserrat", sans-serif;`<br>`margin: 0;`                                                     | Uses Montserrat font, removes default body margin.                         |
+| `#product-overview`                                           | Section with id `product-overview`  | `background: url("freedom.jpg");`<br>`width: 100%;`<br>`height: 528px;`<br>`padding: 10px;`                  | Full-width section with background image and fixed height.                 |
+| `.section-title`                                              | Elements with class `section-title` | `color: #2ddf5c;`                                                                                            | Makes section titles green.                                                |
+| `#product-overview h1`                                        | Heading inside `#product-overview`  | `color: white;`<br>`font-family: "Anton", sans-serif;`                                                       | White, bold headline with Anton font.                                      |
+| `.main-header`                                                | Header container                    | `width: 100%;`<br>`background: #2ddf5c;`<br>`padding: 8px 16px;`                                             | Full-width green header with padding.                                      |
+| `.main-header > div`                                          | Direct child `<div>` in header      | `display: inline-block;`<br>`vertical-align: middle;`                                                        | Aligns header elements side-by-side, vertically centered.                  |
+| `.main-header__brand`                                         | Brand link/logo text                | `color: #0e4f1f;`<br>`text-decoration: none;`<br>`font-weight: bold;`<br>`font-size: 22px;`                  | Large, bold brand name in dark green without underline.                    |
+| `.main-nav`                                                   | Navigation container                | `display: inline-block;`<br>`text-align: right;`<br>`width: calc(100% - 74px);`<br>`vertical-align: middle;` | Places nav next to logo, right-aligned, takes remaining space.             |
+| `.main-nav__items`                                            | `<ul>` list in nav                  | `margin: 0;`<br>`padding: 0;`<br>`list-style: none;`                                                         | Removes default list spacing and bullets.                                  |
+| `.main-nav__item`                                             | Each list item                      | `display: inline-block;`<br>`margin: 0 16px;`                                                                | Displays nav links horizontally with spacing.                              |
+| `.main-nav__item a`                                           | Navigation links                    | `text-decoration: none;`<br>`color: #0e4f1f;`<br>`font-weight: bold;`<br>`padding: 3px 0;`                   | Bold dark-green links without underline.                                   |
+| `.main-nav__item a:hover, .main-nav__item a:active`           | Hover/active state for links        | `color: white;`<br>`border-bottom: 5px solid white;`                                                         | Changes link to white with thick underline on hover.                       |
+| `.main-nav__item--cta a`                                      | Special call-to-action link         | `color: white;`<br>`background: #ff1b68;`<br>`padding: 8px 16px;`<br>`border-radius: 8px;`                   | White text on pink background with rounded corners.                        |
+| `.main-nav__item--cta a:hover, .main-nav__item--cta a:active` | Hover/active CTA                    | `color: #ff1b68;`<br>`background: white;`<br>`border: none;`                                                 | Inverts CTA colors on hover, removes border.                               |
 
----
-
-26. Introducing the CSS Box Model
-    diving-deeper-01-project-introducing-the-box-model-starting-code
-
----
-
-27. Understanding the Box Model
-    #product-overview
-
-padding : 20px
-
----
-
-28. Understanding Margin Collapsing and Removing Default Margins
-
----
-
-29. Deep Dive on "Margin Collapsing"
-30. Theory Time - Working with Shorthand Properties
-    Shorthand Properties
-
----
-
-31. Applying Shorthands in Practice
-32. Diving Into the Height & Width Properties
-
-33. Understanding Box Sizing
-34. Adding the Header to our Project
-35. Understanding the Dis Property
-36. dis: none vs visibility: hidden
-37. HTML Refresher: Block-level vs Inline Elements
-38. Applying the Dis Property & Styling our Navigation Bar
-39. Understanding an Unexpected "inline-block" Behaviour
-40. Working with "text-decoration" & "vertical-align"
-41. Styling Anchor Tags
-42. Adding Pseudo Classes
-43. Theory Time - Pseudo Classes & Pseudo Elements
-44. Grouping Rules
-45. Working with "font-weight" & "border"
-46. Adding & Styling a CTA-Button
-47. Adding a Background Image to our Project
-48. Properties Worth to Remember
-49. Wrap Up
-50. Useful Resources & Links
-
-grep -iR --exclude-dir=".git" --binary-files=without-match "condolences" .
-
-grep -iR --exclude-dir=".git" --binary-files=without-match "sorry" .
+![alt text](image.png)

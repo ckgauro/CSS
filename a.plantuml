@@ -1,0 +1,32 @@
+@startmindmap
+!define GREEN #2ddf5c
+!define GREEN_DARK #0e4f1f
+!define PINK #ff1b68
+!define HERO_BG #EAF7EF
+!define BLACK #000000
+!define WHITE #FFFFFF
+
+* <color:BLACK>html</color>
+** <color:BLACK>head</color>
+*** <color:BLACK>link: Google Fonts ("Anton", "Montserrat")</color>
+*** <color:BLACK>link: main.css</color>
+** <color:BLACK>body</color>
+
+*** <back:GREEN><color:WHITE>header.main-header</color></back>
+**** <color:BLACK>div</color>
+***** <color:GREEN_DARK>a.main-header__brand : "uHost"</color>
+
+**** <color:BLACK>nav.main-nav</color>
+***** <color:BLACK>ul.main-nav__items</color>
+****** <color:GREEN_DARK>li.main-nav__item -> a : "Packages"</color>
+****** <color:GREEN_DARK>li.main-nav__item -> a : "Customers"</color>
+****** <back:PINK><color:WHITE>li.main-nav__item.main-nav__item--cta -> a : "Start Hosting"</color></back>
+
+*** <color:BLACK>main</color>
+**** <back:HERO_BG><color:BLACK>section#product-overview</color></back>
+***** <color:BLACK>h1 : "Get the freedom you deserve."</color>
+
+**** <color:BLACK>section#plans</color>
+***** <color:GREEN>h1.section-title : "Choose Your Plan"</color>
+***** <color:BLACK>p : "Make sure you get the most for your money!"</color>
+@endmindmap
